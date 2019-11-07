@@ -1,0 +1,85 @@
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>JavaScript and BS</title>
+	<style>
+	    li {list-style-type: none;
+			font-size: 16pt;
+			}
+			.mail {
+				margin: auto;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				width: 400px;
+				background : gray;
+				border: 1px soild black;
+				}
+			.mail h2 {
+				margin-left: 25px;
+				font-family: Courier New;
+			    text-align: center;
+				}
+			input {
+				font-size: 22px;
+				font-family: Courier New;
+			    text-align: center;
+				}
+			input:focus, textarea:focus{
+				background-color: lightyellow;
+				}
+			input submit {
+				font-size: 10px;
+				font-family: Courier New;
+			    text-align: center;
+				}
+			p{
+			font-family: Courier New;
+			text-align: center;
+			}
+
+	 </style>
+</head>
+
+<body onload='document.form1.text1.focus()'>
+    <div class="jumbotron text-center">
+	<h1>GET NOTIFICATIONS! </h1>
+    <p class="lead">SUBSCRIBE THROUGH EMAIL</p>
+    <hr class="my-4">
+	</div>
+	
+    <div class="mail">
+      <h2>Enter Mail Id</h2>
+     <form name="form1" action="#"> 
+         <ul>
+			<li><input type='text' name='text1'/></li>
+			<li>&nbsp;</li>
+			<li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/></li>
+			<li>&nbsp;</li>
+         </ul>
+     </form>
+    </div>
+    <script>
+	  function ValidateEmail(inputText)
+			{
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if(inputText.value.match(mailformat))
+			{
+			alert("You will be notified!");
+			document.form1.text1.focus();
+			return true;
+			}
+			else
+			{
+			alert("You have entered an invalid email address!");
+			document.form1.text1.focus();
+			return false;
+			}
+			}
+
+    </script>
+</body>
+</html>
